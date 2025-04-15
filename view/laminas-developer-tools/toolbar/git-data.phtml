@@ -1,0 +1,32 @@
+<div class="laminas-toolbar-entry">
+    <div class="laminas-toolbar-preview">
+        <img alt="Git Info" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYBAMAAAASWSDLAAAAMFBMVEXwUDPwUDPwUDPwUDPwUDPwUDPwUDPwUDPwUDPwUDPwUDPwUDPwUDPwUDPwUDPwUDNcxhweAAAAAXRSTlMAQObYZgAAAIJJREFUeNpNUDESwzAIU2mGbvDVbn5CxjzVjJ3aSJGvYcAICQ4ZYOTUsylfNUKEoUALA08Sn2PgvV/MnF2igoqkcAp4VRKkVhdTmNDCSGseJxWeoDADt4hauyY62t0vUIFaoj4tkFKjeEEtgoB3pXq0cIzXQNtCw2Phou+263+Hv+oHuBMkKxjtOn8AAAAASUVORK5CYII=" />
+    <span class="laminas-toolbar-info">
+                Git Info
+        </span>
+    </div>
+    <div class="laminas-toolbar-detail" id="san-session-toolbar-detail">
+        <div class="laminas-toolbar-detail-inner">
+            <div class="laminas-toolbar-info">
+                <div class="laminas-detail-label"><?= 'Git Version' ?></div>
+                <div class="laminas-detail-value"><?= $collector->getGitVersion() ?>
+            </div>
+            <div class="laminas-toolbar-info">
+                <div class="laminas-detail-label"><?= 'Directory' ?></div>
+                <div class="laminas-detail-value"><?= $collector->getDirectory() ?>
+            </div>
+            <div class="laminas-toolbar-info">
+                <div class="laminas-detail-label"><?= 'Size' ?></div>
+                <div class="laminas-detail-value"><?= $collector->getSize() ?>
+            </div>
+            <?php foreach ($collector->getBranches() as $dir => $branch): ?>
+                <div class="laminas-toolbar-info">
+                    <div class="laminas-detail-label"><?= 'Branch: ' . $dir ?></div>
+                    <div class="laminas-detail-value"><?= $branch ?></div>
+            </div>
+            <?php endforeach; ?>
+
+        </div>
+    </div>
+
+</div>
